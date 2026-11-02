@@ -6,13 +6,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Gramophone
-TARGET_INCLUDE_GRAMOPHONE ?= false
-ifeq ($(TARGET_INCLUDE_GRAMOPHONE),true)
-PRODUCT_PACKAGES += \
-    Gramophone
-endif
-
 # Clocks (SystemUI)
 PRODUCT_PACKAGES += \
     SystemUIClocks-BigNum \
@@ -225,6 +218,13 @@ PRODUCT_PACKAGES += \
     NavbarSammyOverlay \
     NavbarTecnoCamonOverlay
 endif
+
+# Bootanimation
+TARGET_SCREEN_WIDTH ?= 1080
+TARGET_SCREEN_HEIGHT ?= 1920
+PRODUCT_PACKAGES += \
+	bootanimation.zip \
+	bootanimation-dark.zip
 
 # Themes
 PRODUCT_PACKAGES += \
